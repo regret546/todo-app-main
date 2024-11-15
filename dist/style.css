@@ -560,17 +560,160 @@ html {
   font-family: "Josefin Sans", sans-serif;
 }
 
-.text-very-light-gray{
-  --tw-text-opacity: 1;
-  color: hsl(0 0% 98% / var(--tw-text-opacity));
+.flex{
+  display: flex;
 }
 
-.text-red-800{
-  --tw-text-opacity: 1;
-  color: rgb(153 27 27 / var(--tw-text-opacity));
+.grid{
+  display: grid;
+}
+
+.h-\[30vh\]{
+  height: 30vh;
+}
+
+.h-\[25vh\]{
+  height: 25vh;
+}
+
+.w-full{
+  width: 100%;
+}
+
+.w-\[100vh\]{
+  width: 100vh;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.content-center{
+  align-content: center;
+}
+
+.items-center{
+  align-items: center;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.justify-between{
+  justify-content: space-between;
+}
+
+.bg-very-dark-blue{
+  --tw-bg-opacity: 1;
+  background-color: hsl(235 21% 11% / var(--tw-bg-opacity));
+}
+
+.bg-\[url\(\'\/\'\)\]{
+  background-image: url('/');
+}
+
+.bg-\[url\(\'\/images\/bg-mobile-light\.jpg\'\)\]{
+  background-image: url('/images/bg-mobile-light.jpg');
+}
+
+.bg-\[url\(\'\/images\/bg-mobile-dark\.jpg\'\)\]{
+  background-image: url('/images/bg-mobile-dark.jpg');
+}
+
+.bg-cover{
+  background-size: cover;
+}
+
+.bg-no-repeat{
+  background-repeat: no-repeat;
+}
+
+.fill-black{
+  fill: #000;
+}
+
+.fill-pink-600{
+  fill: #db2777;
+}
+
+.fill-very-light-gray{
+  fill: hsl(0, 0%, 98%);
+}
+
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-8{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.align-middle{
+  vertical-align: middle;
+}
+
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-\[4rem\]{
+  font-size: 4rem;
+}
+
+.text-\[3rem\]{
+  font-size: 3rem;
+}
+
+.text-\[2\.5rem\]{
+  font-size: 2.5rem;
+}
+
+.font-fw-bold1{
+  font-weight: 400;
+}
+
+.font-fw-bold2{
+  font-weight: 700;
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+
+.tracking-normal{
+  letter-spacing: 0em;
+}
+
+.tracking-wider{
+  letter-spacing: 0.05em;
+}
+
+.tracking-\[1rem\]{
+  letter-spacing: 1rem;
+}
+
+.tracking-\[0\.8rem\]{
+  letter-spacing: 0.8rem;
+}
+
+.tracking-\[0\.8\=7rem\]{
+  letter-spacing: 0.8=7rem;
+}
+
+.tracking-\[0\.7rem\]{
+  letter-spacing: 0.7rem;
 }
 
 .text-very-dark-blue{
   --tw-text-opacity: 1;
   color: hsl(235 21% 11% / var(--tw-text-opacity));
+}
+
+.text-very-light-gray{
+  --tw-text-opacity: 1;
+  color: hsl(0 0% 98% / var(--tw-text-opacity));
 }

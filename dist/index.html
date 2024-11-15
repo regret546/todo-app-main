@@ -6,6 +6,10 @@
     <!-- displays site properly based on user's device -->
     <link rel="stylesheet" href="/dist/style.css" />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
       rel="icon"
       type="image/png"
       sizes="32x32"
@@ -25,18 +29,41 @@
       }
     </style>
   </head>
-  <body class="text-very-dark-blue">
-    Todo
+  <body class="bg-very-dark-blue">
+    <main class="grid">
+      <section
+        class="header bg-[url('/images/bg-mobile-dark.jpg')] bg-no-repeat bg-cover w-full h-[25vh]"
+      >
+        <div class="flex justify-between items-center px-4 py-8">
+          <h1
+            class="text-[2.5rem] uppercase tracking-[0.7rem] text-very-light-gray font-fw-bold2"
+          >
+            Todo
+          </h1>
 
-    <!-- Add dynamic number -->
-    items left All Active Completed Clear Completed Drag and drop to reorder
-    list
+          <svg
+            class="fill-very-light-gray cursor-pointer"
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M13 21a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-5.657-2.343a1 1 0 010 1.414l-2.121 2.121a1 1 0 01-1.414-1.414l2.12-2.121a1 1 0 011.415 0zm12.728 0l2.121 2.121a1 1 0 01-1.414 1.414l-2.121-2.12a1 1 0 011.414-1.415zM13 8a5 5 0 110 10 5 5 0 010-10zm12 4a1 1 0 110 2h-3a1 1 0 110-2h3zM4 12a1 1 0 110 2H1a1 1 0 110-2h3zm18.192-8.192a1 1 0 010 1.414l-2.12 2.121a1 1 0 01-1.415-1.414l2.121-2.121a1 1 0 011.414 0zm-16.97 0l2.121 2.12A1 1 0 015.93 7.344L3.808 5.222a1 1 0 011.414-1.414zM13 0a1 1 0 011 1v3a1 1 0 11-2 0V1a1 1 0 011-1z"
+            />
+          </svg>
+        </div>
+      </section>
+      <section></section>
+    </main>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+    <footer>
+      <!--     <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div> -->
+    </footer>
   </body>
 </html>

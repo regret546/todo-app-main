@@ -29,10 +29,10 @@
       }
     </style>
   </head>
-  <body class="bg-very-dark-blue">
+  <body class="bg-very-dark-blue text-light-grayish-blue">
     <main class="grid">
       <section
-        class="header bg-[url('/images/bg-mobile-dark.jpg')] bg-no-repeat bg-cover w-full h-[25vh]"
+        class="header bg-[url('/images/bg-mobile-dark.jpg')] bg-no-repeat bg-cover w-full h-[20vh]"
       >
         <div class="flex justify-between items-center px-4 py-8">
           <h1
@@ -54,7 +54,19 @@
           </svg>
         </div>
       </section>
-      <section></section>
+      <section class="main_section grid justify-center text-[1rem]">
+        <form class="mt-4 relative" action="">
+          <input
+            class="bg-very-dark-desaturated-blue rounded-md p-4 pl-[3rem] outline-none"
+            type="text"
+            name="todo"
+            placeholder="Create a todo"
+          />
+          <div
+            class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-very-dark-grayish-blue"
+          ></div>
+        </form>
+      </section>
     </main>
 
     <footer>

@@ -560,6 +560,42 @@ html {
   font-family: "Josefin Sans", sans-serif;
 }
 
+.absolute{
+  position: absolute;
+}
+
+.relative{
+  position: relative;
+}
+
+.top-0{
+  top: 0px;
+}
+
+.top-1\/2{
+  top: 50%;
+}
+
+.top-\[1rem\]{
+  top: 1rem;
+}
+
+.left-\[1rem\]{
+  left: 1rem;
+}
+
+.left-\[0\.5rem\]{
+  left: 0.5rem;
+}
+
+.mt-4{
+  margin-top: 1rem;
+}
+
+.ml-6{
+  margin-left: 1.5rem;
+}
+
 .flex{
   display: flex;
 }
@@ -568,28 +604,52 @@ html {
   display: grid;
 }
 
-.h-\[30vh\]{
-  height: 30vh;
-}
-
 .h-\[25vh\]{
   height: 25vh;
+}
+
+.h-\[20vh\]{
+  height: 20vh;
+}
+
+.h-\[10px\]{
+  height: 10px;
+}
+
+.h-\[30px\]{
+  height: 30px;
+}
+
+.h-\[20px\]{
+  height: 20px;
+}
+
+.h-\[24px\]{
+  height: 24px;
 }
 
 .w-full{
   width: 100%;
 }
 
-.w-\[100vh\]{
-  width: 100vh;
+.w-\[10px\]{
+  width: 10px;
+}
+
+.w-\[30px\]{
+  width: 30px;
+}
+
+.w-\[20px\]{
+  width: 20px;
+}
+
+.w-\[24px\]{
+  width: 24px;
 }
 
 .cursor-pointer{
   cursor: pointer;
-}
-
-.content-center{
-  align-content: center;
 }
 
 .items-center{
@@ -604,17 +664,61 @@ html {
   justify-content: space-between;
 }
 
+.rounded-md{
+  border-radius: 0.375rem;
+}
+
+.rounded-full{
+  border-radius: 9999px;
+}
+
+.border-2{
+  border-width: 2px;
+}
+
+.border-black{
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+.border-very-dark-desaturated-blue{
+  --tw-border-opacity: 1;
+  border-color: hsl(235 24% 19% / var(--tw-border-opacity));
+}
+
+.border-light-grayish-blue{
+  --tw-border-opacity: 1;
+  border-color: hsl(234 39% 85% / var(--tw-border-opacity));
+}
+
+.border-very-dark-blue{
+  --tw-border-opacity: 1;
+  border-color: hsl(235 21% 11% / var(--tw-border-opacity));
+}
+
+.border-dark-grayish-blue{
+  --tw-border-opacity: 1;
+  border-color: hsl(234 11% 52% / var(--tw-border-opacity));
+}
+
+.border-very-dark-grayish-blue{
+  --tw-border-opacity: 1;
+  border-color: hsl(233 14% 35% / var(--tw-border-opacity));
+}
+
 .bg-very-dark-blue{
   --tw-bg-opacity: 1;
   background-color: hsl(235 21% 11% / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\/\'\)\]{
-  background-image: url('/');
+.bg-black{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\/images\/bg-mobile-light\.jpg\'\)\]{
-  background-image: url('/images/bg-mobile-light.jpg');
+.bg-very-dark-desaturated-blue{
+  --tw-bg-opacity: 1;
+  background-color: hsl(235 24% 19% / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'\/images\/bg-mobile-dark\.jpg\'\)\]{
@@ -629,16 +733,16 @@ html {
   background-repeat: no-repeat;
 }
 
-.fill-black{
-  fill: #000;
-}
-
-.fill-pink-600{
-  fill: #db2777;
-}
-
 .fill-very-light-gray{
   fill: hsl(0, 0%, 98%);
+}
+
+.p-2{
+  padding: 0.5rem;
+}
+
+.p-4{
+  padding: 1rem;
 }
 
 .px-4{
@@ -651,8 +755,24 @@ html {
   padding-bottom: 2rem;
 }
 
-.align-middle{
-  vertical-align: middle;
+.pl-6{
+  padding-left: 1.5rem;
+}
+
+.pl-8{
+  padding-left: 2rem;
+}
+
+.pl-\[2\.5rem\]{
+  padding-left: 2.5rem;
+}
+
+.pl-\[3rem\]{
+  padding-left: 3rem;
+}
+
+.text-\[2\.5rem\]{
+  font-size: 2.5rem;
 }
 
 .text-xl{
@@ -660,20 +780,8 @@ html {
   line-height: 1.75rem;
 }
 
-.text-\[4rem\]{
-  font-size: 4rem;
-}
-
-.text-\[3rem\]{
-  font-size: 3rem;
-}
-
-.text-\[2\.5rem\]{
-  font-size: 2.5rem;
-}
-
-.font-fw-bold1{
-  font-weight: 400;
+.text-\[1rem\]{
+  font-size: 1rem;
 }
 
 .font-fw-bold2{
@@ -684,36 +792,26 @@ html {
   text-transform: uppercase;
 }
 
-.tracking-normal{
-  letter-spacing: 0em;
-}
-
-.tracking-wider{
-  letter-spacing: 0.05em;
-}
-
-.tracking-\[1rem\]{
-  letter-spacing: 1rem;
-}
-
-.tracking-\[0\.8rem\]{
-  letter-spacing: 0.8rem;
-}
-
-.tracking-\[0\.8\=7rem\]{
-  letter-spacing: 0.8=7rem;
-}
-
 .tracking-\[0\.7rem\]{
   letter-spacing: 0.7rem;
-}
-
-.text-very-dark-blue{
-  --tw-text-opacity: 1;
-  color: hsl(235 21% 11% / var(--tw-text-opacity));
 }
 
 .text-very-light-gray{
   --tw-text-opacity: 1;
   color: hsl(0 0% 98% / var(--tw-text-opacity));
+}
+
+.text-bright-blue{
+  --tw-text-opacity: 1;
+  color: hsl(220 98% 61% / var(--tw-text-opacity));
+}
+
+.text-light-grayish-blue{
+  --tw-text-opacity: 1;
+  color: hsl(234 39% 85% / var(--tw-text-opacity));
+}
+
+.outline-none{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }

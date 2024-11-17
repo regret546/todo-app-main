@@ -568,32 +568,52 @@ html {
   position: relative;
 }
 
-.top-0{
-  top: 0px;
-}
-
-.top-1\/2{
-  top: 50%;
-}
-
-.top-\[1rem\]{
-  top: 1rem;
+.-top-\[6rem\]{
+  top: -6rem;
 }
 
 .left-\[1rem\]{
   left: 1rem;
 }
 
-.left-\[0\.5rem\]{
-  left: 0.5rem;
+.top-\[1rem\]{
+  top: 1rem;
+}
+
+.-top-\[3rem\]{
+  top: -3rem;
+}
+
+.right-0{
+  right: 0px;
+}
+
+.right-\[1rem\]{
+  right: 1rem;
 }
 
 .mt-4{
   margin-top: 1rem;
 }
 
-.ml-6{
-  margin-left: 1.5rem;
+.mt-\[1rem\]{
+  margin-top: 1rem;
+}
+
+.mt-2{
+  margin-top: 0.5rem;
+}
+
+.mt-\[2px\]{
+  margin-top: 2px;
+}
+
+.mt-\[4px\]{
+  margin-top: 4px;
+}
+
+.mt-\[3px\]{
+  margin-top: 3px;
 }
 
 .flex{
@@ -604,52 +624,48 @@ html {
   display: grid;
 }
 
-.h-\[25vh\]{
-  height: 25vh;
-}
-
 .h-\[20vh\]{
   height: 20vh;
-}
-
-.h-\[10px\]{
-  height: 10px;
-}
-
-.h-\[30px\]{
-  height: 30px;
-}
-
-.h-\[20px\]{
-  height: 20px;
 }
 
 .h-\[24px\]{
   height: 24px;
 }
 
-.w-full{
-  width: 100%;
-}
-
-.w-\[10px\]{
-  width: 10px;
-}
-
-.w-\[30px\]{
-  width: 30px;
-}
-
-.w-\[20px\]{
-  width: 20px;
+.h-full{
+  height: 100%;
 }
 
 .w-\[24px\]{
   width: 24px;
 }
 
+.w-\[300px\]{
+  width: 300px;
+}
+
+.w-full{
+  width: 100%;
+}
+
+.w-screen{
+  width: 100vw;
+}
+
+.transform{
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .cursor-pointer{
   cursor: pointer;
+}
+
+.place-items-center{
+  place-items: center;
+}
+
+.content-center{
+  align-content: center;
 }
 
 .items-center{
@@ -664,41 +680,24 @@ html {
   justify-content: space-between;
 }
 
-.rounded-md{
-  border-radius: 0.375rem;
+.gap-2{
+  gap: 0.5rem;
 }
 
 .rounded-full{
   border-radius: 9999px;
 }
 
+.rounded-md{
+  border-radius: 0.375rem;
+}
+
 .border-2{
   border-width: 2px;
 }
 
-.border-black{
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-
-.border-very-dark-desaturated-blue{
-  --tw-border-opacity: 1;
-  border-color: hsl(235 24% 19% / var(--tw-border-opacity));
-}
-
-.border-light-grayish-blue{
-  --tw-border-opacity: 1;
-  border-color: hsl(234 39% 85% / var(--tw-border-opacity));
-}
-
-.border-very-dark-blue{
-  --tw-border-opacity: 1;
-  border-color: hsl(235 21% 11% / var(--tw-border-opacity));
-}
-
-.border-dark-grayish-blue{
-  --tw-border-opacity: 1;
-  border-color: hsl(234 11% 52% / var(--tw-border-opacity));
+.border-b-2{
+  border-bottom-width: 2px;
 }
 
 .border-very-dark-grayish-blue{
@@ -709,11 +708,6 @@ html {
 .bg-very-dark-blue{
   --tw-bg-opacity: 1;
   background-color: hsl(235 21% 11% / var(--tw-bg-opacity));
-}
-
-.bg-black{
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-very-dark-desaturated-blue{
@@ -737,6 +731,10 @@ html {
   fill: hsl(0, 0%, 98%);
 }
 
+.fill-very-dark-grayish-blue{
+  fill: hsl(233, 14%, 35%);
+}
+
 .p-2{
   padding: 0.5rem;
 }
@@ -745,9 +743,19 @@ html {
   padding: 1rem;
 }
 
+.px-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .px-4{
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .py-8{
@@ -755,33 +763,40 @@ html {
   padding-bottom: 2rem;
 }
 
-.pl-6{
-  padding-left: 1.5rem;
-}
-
-.pl-8{
-  padding-left: 2rem;
-}
-
-.pl-\[2\.5rem\]{
-  padding-left: 2.5rem;
-}
-
 .pl-\[3rem\]{
   padding-left: 3rem;
 }
 
-.text-\[2\.5rem\]{
-  font-size: 2.5rem;
+.pl-4{
+  padding-left: 1rem;
 }
 
-.text-xl{
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.pl-\[2rem\]{
+  padding-left: 2rem;
+}
+
+.pl-\[4rem\]{
+  padding-left: 4rem;
+}
+
+.pb-2{
+  padding-bottom: 0.5rem;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.align-middle{
+  vertical-align: middle;
 }
 
 .text-\[1rem\]{
   font-size: 1rem;
+}
+
+.text-\[2\.5rem\]{
+  font-size: 2.5rem;
 }
 
 .font-fw-bold2{
@@ -796,19 +811,14 @@ html {
   letter-spacing: 0.7rem;
 }
 
-.text-very-light-gray{
-  --tw-text-opacity: 1;
-  color: hsl(0 0% 98% / var(--tw-text-opacity));
-}
-
-.text-bright-blue{
-  --tw-text-opacity: 1;
-  color: hsl(220 98% 61% / var(--tw-text-opacity));
-}
-
 .text-light-grayish-blue{
   --tw-text-opacity: 1;
   color: hsl(234 39% 85% / var(--tw-text-opacity));
+}
+
+.text-very-light-gray{
+  --tw-text-opacity: 1;
+  color: hsl(0 0% 98% / var(--tw-text-opacity));
 }
 
 .outline-none{

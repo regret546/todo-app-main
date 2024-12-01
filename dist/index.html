@@ -34,7 +34,9 @@
       <section
         class="header bg-[url('/images/bg-mobile-dark.jpg')] md:bg-[url('/images/bg-mobile-dark.jpg')] bg-no-repeat bg-cover w-full h-[20vh] md:h-[35vh] md:flex md:justify-center"
       >
-        <div class="flex justify-between items-center px-4 py-8 md:min-w-[500px] md:-mt-[4rem]">
+        <div
+          class="flex justify-between items-center px-4 py-8 md:min-w-[500px] md:-mt-[4rem]"
+        >
           <h1
             class="text-[2.5rem] uppercase tracking-[0.7rem] text-very-light-gray font-fw-bold2"
           >
@@ -54,10 +56,13 @@
           </svg>
         </div>
       </section>
-      <section class="main_section grid justify-center text-[1rem] w-screen ">
-        <form class="mt-4 relative w-[300px] -top-[6rem] md:-top-[10rem]  md:w-full md:min-w-[500px]" action="">
+      <section class="main_section grid justify-center text-[1rem] w-screen">
+        <form
+          class="mt-4 relative w-[300px] -top-[6rem] md:-top-[10rem] md:w-full md:min-w-[500px]"
+          action=""
+        >
           <input
-            class="bg-very-dark-desaturated-blue w-full rounded-md py-4 px-2 pl-[3rem] outline-none "
+            class="bg-very-dark-desaturated-blue w-full rounded-md py-4 px-2 pl-[3rem] outline-none"
             type="text"
             name="todo"
             placeholder="Create a todo"
@@ -91,15 +96,58 @@
               </svg>
             </div>
           </div>
+
+          <div class="list-body">
+            <div
+              class="py-4 pl-[3rem] relative text-left border-b-2 border-very-dark-grayish-blue"
+            >
+              <div
+                class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-very-dark-grayish-blue"
+              ></div>
+              10 mins meditation
+              <svg
+                class="absolute grid place-items-center text-[1rem] right-[1rem] top-[1rem] fill-very-dark-grayish-blue mt-[2px]"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+                />
+              </svg>
+            </div>
+          </div>
+
           <div
             class="list-footer flex justify-between text-sm px-4 my-2 text-very-dark-grayish-blue"
           >
             <div>5 items left</div>
+            <div
+              class="hidden md:flex justify-center gap-2 text-sm font-fw-bold2 text-very-dark-grayish-blue"
+            >
+              <div
+                class="cursor-pointer hover:text-bright-blue transition-colors ease-in-out"
+              >
+                All
+              </div>
+              <div
+                class="cursor-pointer hover:text-bright-blue transition-colors ease-in-out"
+              >
+                Active
+              </div>
+              <div
+                class="cursor-pointer hover:text-bright-blue transition-colors ease-in-out"
+              >
+                Completed
+              </div>
+            </div>
             <div>Clear Completed</div>
           </div>
         </article>
         <article
-          class="bg-very-dark-desaturated-blue rounded-md p-4 relative -top-4"
+          class="bg-very-dark-desaturated-blue rounded-md p-4 relative -top-4 md:hidden"
         >
           <div
             class="flex justify-center gap-2 text-sm font-fw-bold2 text-very-dark-grayish-blue"
@@ -121,7 +169,11 @@
             </div>
           </div>
         </article>
-        <p class="text-sm text-very-dark-grayish-blue text-center">Drag and drop to reorder list</p>
+        <p
+          class="text-sm text-very-dark-grayish-blue relative text-center md:-top-[6rem]"
+        >
+          Drag and drop to reorder list
+        </p>
       </section>
     </main>
 

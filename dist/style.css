@@ -617,6 +617,10 @@ html {
   display: grid;
 }
 
+.hidden{
+  display: none;
+}
+
 .h-\[20vh\]{
   height: 20vh;
 }
@@ -817,6 +821,10 @@ html {
 }
 
 @media (min-width: 768px){
+  .md\:relative{
+    position: relative;
+  }
+
   .md\:-top-\[10rem\]{
     top: -10rem;
   }
@@ -837,6 +845,26 @@ html {
     top: -6rem;
   }
 
+  .md\:-top-\[1rem\]{
+    top: -1rem;
+  }
+
+  .md\:-top-1{
+    top: -0.25rem;
+  }
+
+  .md\:top-2{
+    top: 0.5rem;
+  }
+
+  .md\:-top-2{
+    top: -0.5rem;
+  }
+
+  .md\:-top-\[5rem\]{
+    top: -5rem;
+  }
+
   .md\:-mt-4{
     margin-top: -1rem;
   }
@@ -853,8 +881,20 @@ html {
     margin-top: -4rem;
   }
 
+  .md\:-mt-\[10rem\]{
+    margin-top: -10rem;
+  }
+
+  .md\:-mt-\[3rem\]{
+    margin-top: -3rem;
+  }
+
   .md\:flex{
     display: flex;
+  }
+
+  .md\:hidden{
+    display: none;
   }
 
   .md\:h-\[40vh\]{

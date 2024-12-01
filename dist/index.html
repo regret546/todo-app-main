@@ -18,7 +18,7 @@
 
     <title>Frontend Mentor | Todo app</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <!-- Feel free to remove these styles or customise in yxour own stylesheet 👍 -->
     <style>
       .attribution {
         font-size: 11px;
@@ -32,9 +32,9 @@
   <body class="bg-very-dark-blue text-light-grayish-blue">
     <main class="grid">
       <section
-        class="header bg-[url('/images/bg-mobile-dark.jpg')] bg-no-repeat bg-cover w-full h-[20vh]"
+        class="header bg-[url('/images/bg-mobile-dark.jpg')] md:bg-[url('/images/bg-mobile-dark.jpg')] bg-no-repeat bg-cover w-full h-[20vh] md:h-[35vh] md:flex md:justify-center"
       >
-        <div class="flex justify-between items-center px-4 py-8">
+        <div class="flex justify-between items-center px-4 py-8 md:min-w-[500px] md:-mt-[4rem]">
           <h1
             class="text-[2.5rem] uppercase tracking-[0.7rem] text-very-light-gray font-fw-bold2"
           >
@@ -54,10 +54,10 @@
           </svg>
         </div>
       </section>
-      <section class="main_section grid justify-center text-[1rem] w-screen">
-        <form class="mt-4 relative w-[300px] -top-[6rem]" action="">
+      <section class="main_section grid justify-center text-[1rem] w-screen ">
+        <form class="mt-4 relative w-[300px] -top-[6rem] md:-top-[10rem]  md:w-full md:min-w-[500px]" action="">
           <input
-            class="bg-very-dark-desaturated-blue w-full rounded-md py-4 px-2 pl-[3rem] outline-none"
+            class="bg-very-dark-desaturated-blue w-full rounded-md py-4 px-2 pl-[3rem] outline-none "
             type="text"
             name="todo"
             placeholder="Create a todo"
@@ -67,7 +67,7 @@
           ></div>
         </form>
         <article
-          class="list relative grid gap-2 w-full pb-2 -top-[3rem] bg-very-dark-desaturated-blue rounded-md"
+          class="list relative grid gap-2 w-full pb-2 -top-[3rem] md:-top-[8rem] bg-very-dark-desaturated-blue rounded-md"
         >
           <div class="list-body">
             <div
@@ -121,6 +121,7 @@
             </div>
           </div>
         </article>
+        <p class="text-sm text-very-dark-grayish-blue text-center">Drag and drop to reorder list</p>
       </section>
     </main>
 

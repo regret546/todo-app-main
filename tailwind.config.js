@@ -6,7 +6,8 @@ module.exports = {
       colors: {
         /*  Primary  */
         "bright-blue": "hsl(220, 98%, 61%)",
-        "linear-gradient": "hsl(192, 100%, 67%) to hsl(280, 87%, 65%)",
+        "linear-gradient-from": "hsl(192, 100%, 67%)",
+        "linear-gradient-to": "hsl(280, 87%, 65%)",
         /*    Light Theme */
         "very-light-gray": "hsl(0, 0%, 98%)",
         "very-light-grayish-blue": "hsl(236, 33%, 92%)",

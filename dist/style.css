@@ -592,10 +592,6 @@ html {
   top: 1rem;
 }
 
-.-top-\[10rem\]{
-  top: -10rem;
-}
-
 .my-2{
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -702,6 +698,24 @@ html {
 
 .bg-\[url\(\'\/images\/bg-mobile-dark\.jpg\'\)\]{
   background-image: url('/images/bg-mobile-dark.jpg');
+}
+
+.bg-gradient-to-r{
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-br{
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.from-linear-gradient-from{
+  --tw-gradient-from: hsl(192, 100%, 67%) var(--tw-gradient-from-position);
+  --tw-gradient-to: hsl(192 100% 67% / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-linear-gradient-to{
+  --tw-gradient-to: hsl(280, 87%, 65%) var(--tw-gradient-to-position);
 }
 
 .bg-cover{
@@ -821,72 +835,20 @@ html {
 }
 
 @media (min-width: 768px){
-  .md\:relative{
-    position: relative;
-  }
-
   .md\:-top-\[10rem\]{
     top: -10rem;
-  }
-
-  .md\:-top-\[7rem\]{
-    top: -7rem;
-  }
-
-  .md\:-top-\[8rem\]{
-    top: -8rem;
-  }
-
-  .md\:-top-\[2rem\]{
-    top: -2rem;
   }
 
   .md\:-top-\[6rem\]{
     top: -6rem;
   }
 
-  .md\:-top-\[1rem\]{
-    top: -1rem;
+  .md\:-top-\[8rem\]{
+    top: -8rem;
   }
 
-  .md\:-top-1{
-    top: -0.25rem;
-  }
-
-  .md\:top-2{
-    top: 0.5rem;
-  }
-
-  .md\:-top-2{
-    top: -0.5rem;
-  }
-
-  .md\:-top-\[5rem\]{
-    top: -5rem;
-  }
-
-  .md\:-mt-4{
-    margin-top: -1rem;
-  }
-
-  .md\:-mt-\[2rem\]{
-    margin-top: -2rem;
-  }
-
-  .md\:-mt-\[5rem\]{
-    margin-top: -5rem;
-  }
-
-  .md\:-mt-\[4rem\]{
-    margin-top: -4rem;
-  }
-
-  .md\:-mt-\[10rem\]{
-    margin-top: -10rem;
-  }
-
-  .md\:-mt-\[3rem\]{
-    margin-top: -3rem;
+  .md\:-mt-\[7rem\]{
+    margin-top: -7rem;
   }
 
   .md\:flex{
@@ -897,14 +859,6 @@ html {
     display: none;
   }
 
-  .md\:h-\[40vh\]{
-    height: 40vh;
-  }
-
-  .md\:h-\[30vh\]{
-    height: 30vh;
-  }
-
   .md\:h-\[35vh\]{
     height: 35vh;
   }
@@ -913,16 +867,8 @@ html {
     width: 100%;
   }
 
-  .md\:min-w-\[700px\]{
-    min-width: 700px;
-  }
-
   .md\:min-w-\[500px\]{
     min-width: 500px;
-  }
-
-  .md\:max-w-\[700px\]{
-    max-width: 700px;
   }
 
   .md\:justify-center{
@@ -931,5 +877,10 @@ html {
 
   .md\:bg-\[url\(\'\/images\/bg-mobile-dark\.jpg\'\)\]{
     background-image: url('/images/bg-mobile-dark.jpg');
+  }
+
+  .md\:px-0{
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }

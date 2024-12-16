@@ -700,10 +700,6 @@ html {
   background-image: url('/images/bg-mobile-dark.jpg');
 }
 
-.bg-gradient-to-r{
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-}
-
 .bg-gradient-to-br{
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
@@ -812,6 +808,10 @@ html {
 .text-very-light-gray{
   --tw-text-opacity: 1;
   color: hsl(0 0% 98% / var(--tw-text-opacity));
+}
+
+.line-through{
+  text-decoration-line: line-through;
 }
 
 .outline-none{

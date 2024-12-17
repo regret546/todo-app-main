@@ -29,7 +29,7 @@
       }
     </style>
   </head>
-  <body class="bg-very-dark-blue text-light-grayish-blue">
+  <body class="dark bg-background-color text-text-color">
     <main class="grid">
       <section
         class="header bg-[url('/images/bg-mobile-dark.jpg')] md:bg-[url('/images/bg-mobile-dark.jpg')] bg-no-repeat bg-cover w-full h-[20vh] md:h-[35vh] md:flex md:justify-center"
@@ -38,13 +38,13 @@
           class="flex justify-between items-center px-4 md:px-0 py-8 md:min-w-[500px] md:-mt-[7rem]"
         >
           <h1
-            class="text-[2.5rem] uppercase tracking-[0.7rem] text-very-light-gray font-fw-bold2"
+            class="text-header-color text-[2.5rem] uppercase tracking-[0.7rem] font-fw-bold2"
           >
             Todo
           </h1>
 
           <svg
-            class="fill-very-light-gray cursor-pointer"
+            class="fill-header-color cursor-pointer"
             xmlns="http://www.w3.org/2000/svg"
             width="26"
             height="26"
@@ -62,30 +62,30 @@
           action=""
         >
           <input
-            class="bg-very-dark-desaturated-blue w-full rounded-md py-4 px-2 pl-[3rem] outline-none"
+            class="bg-body-color w-full rounded-md py-4 px-2 pl-[3rem] outline-none"
             type="text"
             name="todo"
             placeholder="Create a todo"
           />
           <div
-            class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-very-dark-grayish-blue"
+            class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color"
           ></div>
         </form>
         <article
-          class="list relative grid gap-2 w-full pb-2 -top-[3rem] md:-top-[8rem] bg-very-dark-desaturated-blue rounded-md"
+          class="list relative grid gap-2 w-full pb-2 -top-[3rem] md:-top-[8rem] bg-body-color rounded-md"
         >
           <div class="list-body">
             <div
-              class="py-4 pl-[3rem] line-through relative text-left border-b-2 border-very-dark-grayish-blue text-very-dark-grayish-blue"
+              class="py-4 pl-[3rem] line-through relative text-left border-b-2 border-border-color text-border-color"
             >
               <div
-                class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-very-dark-grayish-blue grid place-items-center cursor-pointer bg-gradient-to-br from-linear-gradient-from to-linear-gradient-to"
+                class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color grid place-items-center cursor-pointer bg-gradient-to-br from-linear-gradient-from to-linear-gradient-to"
               >
                 <img src="/images/icon-check.svg" alt="" />
               </div>
               Jog around the part 3x
               <svg
-                class="absolute grid place-items-center text-[1rem] right-[1rem] top-[1rem] fill-very-dark-grayish-blue mt-[2px]"
+                class="absolute grid place-items-center text-[1rem] right-[1rem] top-[1rem] fill-border-color mt-[2px]"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -101,14 +101,14 @@
 
           <div class="list-body">
             <div
-              class="py-4 pl-[3rem] relative text-left border-b-2 border-very-dark-grayish-blue"
+              class="py-4 pl-[3rem] relative text-left border-b-2 border-border-color"
             >
               <div
-                class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-very-dark-grayish-blue"
+                class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color"
               ></div>
               10 mins meditation
               <svg
-                class="absolute grid place-items-center text-[1rem] right-[1rem] top-[1rem] fill-very-dark-grayish-blue mt-[2px]"
+                class="absolute grid place-items-center text-[1rem] right-[1rem] top-[1rem] fill-border-color mt-[2px]"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -124,14 +124,14 @@
 
           <div class="list-body">
             <div
-              class="py-4 pl-[3rem] relative text-left border-b-2 border-very-dark-grayish-blue"
+              class="py-4 pl-[3rem] relative text-left border-b-2 border-border-color"
             >
               <div
-                class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-very-dark-grayish-blue"
+                class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color"
               ></div>
               Wew
               <svg
-                class="absolute grid place-items-center text-[1rem] right-[1rem] top-[1rem] fill-very-dark-grayish-blue mt-[2px]"
+                class="absolute grid place-items-center text-[1rem] right-[1rem] top-[1rem] fill-border-color mt-[2px]"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -146,11 +146,11 @@
           </div>
 
           <div
-            class="list-footer flex justify-between text-sm px-4 my-2 text-very-dark-grayish-blue"
+            class="list-footer flex justify-between text-sm px-4 my-2 text-border-color"
           >
             <div>5 items left</div>
             <div
-              class="hidden md:flex justify-center gap-2 text-sm font-fw-bold2 text-very-dark-grayish-blue"
+              class="hidden md:flex justify-center gap-2 text-sm font-fw-bold2 text-border-color"
             >
               <div
                 class="cursor-pointer hover:text-bright-blue transition-colors ease-in-out"
@@ -171,11 +171,9 @@
             <div>Clear Completed</div>
           </div>
         </article>
-        <article
-          class="bg-very-dark-desaturated-blue rounded-md p-4 relative -top-4 md:hidden"
-        >
+        <article class="bg-body-color rounded-md p-4 relative -top-4 md:hidden">
           <div
-            class="flex justify-center gap-2 text-sm font-fw-bold2 text-very-dark-grayish-blue"
+            class="flex justify-center gap-2 text-sm font-fw-bold2 text-border-color"
           >
             <div
               class="cursor-pointer hover:text-bright-blue transition-colors ease-in-out"
@@ -195,7 +193,7 @@
           </div>
         </article>
         <p
-          class="text-sm text-very-dark-grayish-blue relative text-center md:-top-[6rem]"
+          class="text-sm text-border-color relative text-center md:-top-[6rem]"
         >
           Drag and drop to reorder list
         </p>

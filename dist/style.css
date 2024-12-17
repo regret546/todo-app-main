@@ -681,19 +681,16 @@ html {
   border-bottom-width: 2px;
 }
 
-.border-very-dark-grayish-blue{
-  --tw-border-opacity: 1;
-  border-color: hsl(233 14% 35% / var(--tw-border-opacity));
+.border-border-color{
+  border-color: var(--border);
 }
 
-.bg-very-dark-blue{
-  --tw-bg-opacity: 1;
-  background-color: hsl(235 21% 11% / var(--tw-bg-opacity));
+.bg-background-color{
+  background-color: var(--background);
 }
 
-.bg-very-dark-desaturated-blue{
-  --tw-bg-opacity: 1;
-  background-color: hsl(235 24% 19% / var(--tw-bg-opacity));
+.bg-body-color{
+  background-color: var(--body);
 }
 
 .bg-\[url\(\'\/images\/bg-mobile-dark\.jpg\'\)\]{
@@ -722,11 +719,11 @@ html {
   background-repeat: no-repeat;
 }
 
-.fill-very-dark-grayish-blue{
-  fill: hsl(233, 14%, 35%);
+.fill-border-color{
+  fill: var(--border);
 }
 
-.fill-very-light-gray{
+.fill-header-color{
   fill: hsl(0, 0%, 98%);
 }
 
@@ -795,19 +792,17 @@ html {
   letter-spacing: 0.7rem;
 }
 
-.text-light-grayish-blue{
-  --tw-text-opacity: 1;
-  color: hsl(234 39% 85% / var(--tw-text-opacity));
+.text-border-color{
+  color: var(--border);
 }
 
-.text-very-dark-grayish-blue{
-  --tw-text-opacity: 1;
-  color: hsl(233 14% 35% / var(--tw-text-opacity));
-}
-
-.text-very-light-gray{
+.text-header-color{
   --tw-text-opacity: 1;
   color: hsl(0 0% 98% / var(--tw-text-opacity));
+}
+
+.text-text-color{
+  color: var(--text);
 }
 
 .line-through{
@@ -827,6 +822,16 @@ html {
 
 .ease-in-out{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*   ### Dark Theme */
+
+.dark {
+  --background: hsl(235, 21%, 11%);
+  --header: hsl(234, 39%, 85%);
+  --body: hsl(235, 24%, 19%);
+  --border: hsl(235, 19%, 35%);
+  --text: hsl(234, 39%, 85%);
 }
 
 .hover\:text-bright-blue:hover{

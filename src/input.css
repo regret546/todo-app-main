@@ -3,6 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/*   ### Dark Theme */
+.dark {
+  --background: hsl(235, 21%, 11%);
+  --header: hsl(234, 39%, 85%);
+  --body: hsl(235, 24%, 19%);
+  --border: hsl(235, 19%, 35%);
+  --text: hsl(234, 39%, 85%);
+}
+
 @layer base {
   html {
     font-family: "Josefin Sans", sans-serif;

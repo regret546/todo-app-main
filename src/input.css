@@ -12,6 +12,13 @@
   --text: hsl(234, 39%, 85%);
 }
 
+.light {
+  --background: hsl(236, 33%, 92%);
+  --header: hsl(0, 0%, 98%);
+  --body: hsl(0, 0%, 98%);
+  --border: hsl(236, 9%, 61%);
+  --text: hsl(235, 19%, 35%);
+}
 @layer base {
   html {
     font-family: "Josefin Sans", sans-serif;

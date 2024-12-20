@@ -701,6 +701,10 @@ html {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
+.bg-\[url\(\'\/images\/bg-mobile-light\.jpg\'\)\]{
+  background-image: url('/images/bg-mobile-light.jpg');
+}
+
 .from-linear-gradient-from{
   --tw-gradient-from: hsl(192, 100%, 67%) var(--tw-gradient-from-position);
   --tw-gradient-to: hsl(192 100% 67% / 0) var(--tw-gradient-to-position);
@@ -890,6 +894,10 @@ html {
 
   .md\:bg-\[url\(\'\/images\/bg-mobile-dark\.jpg\'\)\]{
     background-image: url('/images/bg-mobile-dark.jpg');
+  }
+
+  .md\:bg-\[url\(\'\/images\/bg-mobile-light\.jpg\'\)\]{
+    background-image: url('/images/bg-mobile-light.jpg');
   }
 
   .md\:px-0{

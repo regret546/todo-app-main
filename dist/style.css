@@ -605,6 +605,10 @@ html {
   margin-top: 2px;
 }
 
+.inline-block{
+  display: inline-block;
+}
+
 .flex{
   display: flex;
 }
@@ -643,6 +647,12 @@ html {
 
 .cursor-pointer{
   cursor: pointer;
+}
+
+.select-none{
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .place-items-center{
@@ -697,12 +707,12 @@ html {
   background-image: url('/images/bg-mobile-dark.jpg');
 }
 
-.bg-gradient-to-br{
-  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
-}
-
 .bg-\[url\(\'\/images\/bg-mobile-light\.jpg\'\)\]{
   background-image: url('/images/bg-mobile-light.jpg');
+}
+
+.bg-gradient-to-br{
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
 .from-linear-gradient-from{
@@ -818,6 +828,11 @@ html {
   outline-offset: 2px;
 }
 
+.blur{
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .transition-colors{
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -846,9 +861,8 @@ html {
   --text: hsl(235, 19%, 35%);
 }
 
-.hover\:text-bright-blue:hover{
-  --tw-text-opacity: 1;
-  color: hsl(220 98% 61% / var(--tw-text-opacity));
+.hover\:text-text-color:hover{
+  color: var(--text);
 }
 
 @media (min-width: 768px){
@@ -892,12 +906,12 @@ html {
     justify-content: center;
   }
 
-  .md\:bg-\[url\(\'\/images\/bg-mobile-dark\.jpg\'\)\]{
-    background-image: url('/images/bg-mobile-dark.jpg');
+  .md\:bg-\[url\(\'\/images\/bg-desktop-dark\.jpg\'\)\]{
+    background-image: url('/images/bg-desktop-dark.jpg');
   }
 
-  .md\:bg-\[url\(\'\/images\/bg-mobile-light\.jpg\'\)\]{
-    background-image: url('/images/bg-mobile-light.jpg');
+  .md\:bg-\[url\(\'\/images\/bg-desktop-light\.jpg\'\)\]{
+    background-image: url('/images/bg-desktop-light.jpg');
   }
 
   .md\:px-0{

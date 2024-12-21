@@ -33,7 +33,7 @@
     <main class="grid">
       <section
         id="header"
-        class="header bg-[url('/images/bg-mobile-dark.jpg')] md:bg-[url('/images/bg-mobile-dark.jpg')] bg-no-repeat bg-cover w-full h-[20vh] md:h-[35vh] md:flex md:justify-center"
+        class="header select-none bg-[url('/images/bg-mobile-dark.jpg')] md:bg-[url('/images/bg-desktop-dark.jpg')] bg-no-repeat bg-cover w-full h-[20vh] md:h-[35vh] md:flex md:justify-center"
       >
         <div
           class="flex justify-between items-center px-4 md:px-0 py-8 md:min-w-[500px] md:-mt-[7rem]"
@@ -60,10 +60,12 @@
       </section>
       <section class="main_section grid justify-center text-[1rem] w-screen">
         <form
+          id="input-form"
           class="mt-4 relative w-[300px] -top-[6rem] md:-top-[10rem] md:w-full md:min-w-[500px]"
           action=""
         >
           <input
+            id="userInput"
             class="bg-body-color w-full rounded-md py-4 px-2 pl-[3rem] outline-none"
             type="text"
             name="todo"
@@ -76,7 +78,7 @@
         <article
           class="list relative grid gap-2 w-full pb-2 -top-[3rem] md:-top-[8rem] bg-body-color rounded-md"
         >
-          <div class="list-body">
+          <!-- <div class="list-body">
             <div
               class="py-4 pl-[3rem] line-through relative text-left border-b-2 border-border-color text-border-color"
             >
@@ -99,41 +101,21 @@
                 />
               </svg>
             </div>
-          </div>
-
-          <div class="list-body">
-            <div
-              class="py-4 pl-[3rem] relative text-left border-b-2 border-border-color"
-            >
+          </div> -->
+          <div class="todo-container" id="todo-list">
+            <div class="list-body">
               <div
-                class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color"
-              ></div>
-              10 mins meditation
-              <svg
-                class="absolute grid place-items-center text-[1rem] right-[1rem] top-[1rem] fill-border-color mt-[2px]"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
+                class="py-4 pl-[3rem] relative text-left border-b-2 border-border-color"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
-                />
-              </svg>
-            </div>
-          </div>
-
-          <div class="list-body">
-            <div
-              class="py-4 pl-[3rem] relative text-left border-b-2 border-border-color"
-            >
-              <div
-                class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color"
-              ></div>
-              Wew
+                <div class="cursor-pointer inline-block">
+                  <div
+                    class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color"
+                  ></div>
+                  <p>10 mins meditation</p>
+                </div>
+              </div>
               <svg
-                class="absolute grid place-items-center text-[1rem] right-[1rem] top-[1rem] fill-border-color mt-[2px]"
+                class="absolute grid place-items-center cursor-pointer text-[1rem] right-[1rem] top-[1rem] fill-border-color mt-[2px]"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -155,22 +137,26 @@
               class="hidden md:flex justify-center gap-2 text-sm font-fw-bold2 text-border-color"
             >
               <div
-                class="cursor-pointer hover:text-bright-blue transition-colors ease-in-out"
+                class="cursor-pointer hover:text-text-color transition-colors ease-in-out"
               >
                 All
               </div>
               <div
-                class="cursor-pointer hover:text-bright-blue transition-colors ease-in-out"
+                class="cursor-pointer hover:text-text-color transition-colors ease-in-out"
               >
                 Active
               </div>
               <div
-                class="cursor-pointer hover:text-bright-blue transition-colors ease-in-out"
+                class="cursor-pointer hover:text-text-color transition-colors ease-in-out"
               >
                 Completed
               </div>
             </div>
-            <div>Clear Completed</div>
+            <div
+              class="cursor-pointer hover:text-text-color transition-colors ease-in-out"
+            >
+              Clear Completed
+            </div>
           </div>
         </article>
         <article class="bg-body-color rounded-md p-4 relative -top-4 md:hidden">
@@ -178,17 +164,17 @@
             class="flex justify-center gap-2 text-sm font-fw-bold2 text-border-color"
           >
             <div
-              class="cursor-pointer hover:text-bright-blue transition-colors ease-in-out"
+              class="cursor-pointer hover:text-text-color transition-colors ease-in-out"
             >
               All
             </div>
             <div
-              class="cursor-pointer hover:text-bright-blue transition-colors ease-in-out"
+              class="cursor-pointer hover:text-text-color transition-colors ease-in-out"
             >
               Active
             </div>
             <div
-              class="cursor-pointer hover:text-bright-blue transition-colors ease-in-out"
+              class="cursor-pointer hover:text-text-color transition-colors ease-in-out"
             >
               Completed
             </div>
@@ -211,5 +197,33 @@
       </div> -->
     </footer>
     <script src="app.js" defer></script>
+
+    <!-- Template -->
+    <template data-user-todo>
+      <div class="list-body relative">
+        <div
+          class="py-4 pl-[3rem] relative text-left border-b-2 border-border-color"
+        >
+          <div class="cursor-pointer inline-block">
+            <div
+              class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color"
+            ></div>
+            <p data-todo-info>10 mins meditation</p>
+          </div>
+        </div>
+        <svg
+          class="absolute grid place-items-center cursor-pointer text-[1rem] right-[1rem] top-[1rem] fill-border-color mt-[2px]"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+          />
+        </svg>
+      </div>
+    </template>
   </body>
 </html>

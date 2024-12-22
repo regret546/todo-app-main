@@ -120,6 +120,7 @@
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
+                onclick="deleteToDo(this)"
               >
                 <path
                   fill-rule="evenodd"
@@ -200,7 +201,7 @@
 
     <!-- Template -->
     <template data-user-todo>
-      <div class="list-body relative">
+      <div class="list-body relative animate-fade-up">
         <div
           class="py-4 pl-[3rem] relative text-left border-b-2 border-border-color"
         >
@@ -217,6 +218,7 @@
           width="24"
           height="24"
           viewBox="0 0 24 24"
+          onclick="deleteToDo(this)"
         >
           <path
             fill-rule="evenodd"

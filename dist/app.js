@@ -37,6 +37,8 @@ toggleTheme.addEventListener("click", function () {
 });
 
 /* todo form */
+
+/* new */
 const todoCard = document.querySelector("[data-user-todo]");
 const todoCardContainer = document.querySelector("#todo-list");
 function newToDo(input) {
@@ -53,3 +55,9 @@ todoInputForm.addEventListener("submit", function (e) {
   this.querySelector("#userInput").value = "";
   this.querySelector("#userInput").blur();
 });
+
+/* delete */
+function deleteToDo(currentToDo) {
+  const currentToDoContainer = currentToDo.closest(".list-body");
+  currentToDoContainer.remove();
+}

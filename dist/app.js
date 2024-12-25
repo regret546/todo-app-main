@@ -42,6 +42,9 @@ toggleTheme.addEventListener("click", function () {
 const todoCard = document.querySelector("[data-user-todo]");
 const todoCardContainer = document.querySelector("#todo-list");
 function newToDo(input) {
+  if (!input.trim()) {
+    return;
+  }
   const card = todoCard.content.cloneNode(true).children[0];
   const todoInfo = card.querySelector("[data-todo-info]");
   todoInfo.textContent = input;
@@ -60,4 +63,24 @@ todoInputForm.addEventListener("submit", function (e) {
 function deleteToDo(currentToDo) {
   const currentToDoContainer = currentToDo.closest(".list-body");
   currentToDoContainer.remove();
+}
+
+/* finish */
+function finishToDo(currentToDo) {
+  const currentToDoContainer = currentToDo.closest(".list-body");
+  const imageContainer = currentToDoContainer.querySelector(".checkbox");
+  if (!imageContainer.classList.contains("bg-gradient-to-br")) {
+    const checkImage = document.createElement("img");
+    checkImage.src = "/images/icon-check.svg";
+    imageContainer.append(checkImage);
+    imageContainer.classList.add(
+      "animate-fade-down",
+      "bg-gradient-to-br",
+      "from-linear-gradient-from",
+      "to-linear-gradient-to"
+    );
+    currentToDoContainer
+      .querySelector("[data-todo-info]")
+      .classList.add("line-through", "text-border-color");
+  }
 }

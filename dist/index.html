@@ -78,55 +78,30 @@
         <article
           class="list relative grid gap-2 w-full pb-2 -top-[3rem] md:-top-[8rem] bg-body-color rounded-md"
         >
-          <!-- <div class="list-body">
-            <div
-              class="py-4 pl-[3rem] line-through relative text-left border-b-2 border-border-color text-border-color"
-            >
-              <div
-                class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color grid place-items-center cursor-pointer bg-gradient-to-br from-linear-gradient-from to-linear-gradient-to"
-              >
-                <img src="/images/icon-check.svg" alt="" />
-              </div>
-              Jog around the part 3x
-              <svg
-                class="absolute grid place-items-center text-[1rem] right-[1rem] top-[1rem] fill-border-color mt-[2px]"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
-                />
-              </svg>
-            </div>
-          </div> -->
           <div class="todo-container" id="todo-list">
             <div class="list-body">
               <div
-                class="py-4 pl-[3rem] relative text-left border-b-2 border-border-color"
+                class="py-4 pl-[3rem] line-through relative text-left border-b-2 border-border-color text-border-color"
               >
-                <div class="cursor-pointer inline-block">
-                  <div
-                    class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color"
-                  ></div>
-                  <p>10 mins meditation</p>
+                <div
+                  class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color grid place-items-center cursor-pointer bg-gradient-to-br from-linear-gradient-from to-linear-gradient-to"
+                >
+                  <img src="/images/icon-check.svg" alt="" />
                 </div>
+                Jog around the part 3x
+                <svg
+                  class="absolute grid place-items-center text-[1rem] right-[1rem] top-[1rem] fill-border-color mt-[2px]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+                  />
+                </svg>
               </div>
-              <svg
-                class="absolute grid place-items-center cursor-pointer text-[1rem] right-[1rem] top-[1rem] fill-border-color mt-[2px]"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                onclick="deleteToDo(this)"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
-                />
-              </svg>
             </div>
           </div>
 
@@ -203,11 +178,11 @@
     <template data-user-todo>
       <div class="list-body relative animate-fade-up">
         <div
-          class="py-4 pl-[3rem] relative text-left border-b-2 border-border-color"
+          class="list-body-info py-4 pl-[3rem] relative text-left transition-colors duration-300 ease-in-out border-b-2 border-border-color"
         >
-          <div class="cursor-pointer inline-block">
+          <div class="cursor-pointer inline-block" onclick="finishToDo(this)">
             <div
-              class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color"
+              class="checkbox absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color grid place-items-center"
             ></div>
             <p data-todo-info>10 mins meditation</p>
           </div>

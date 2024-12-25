@@ -621,24 +621,12 @@ html {
   display: none;
 }
 
-.h-\[18px\]{
-  height: 18px;
-}
-
 .h-\[20vh\]{
   height: 20vh;
 }
 
 .h-\[24px\]{
   height: 24px;
-}
-
-.h-\[25px\]{
-  height: 25px;
-}
-
-.w-\[18px\]{
-  width: 18px;
 }
 
 .w-\[24px\]{
@@ -657,14 +645,26 @@ html {
   width: 100vw;
 }
 
-.w-\[25px\]{
-  width: 25px;
+@keyframes fade-down{
+  0%{
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9);
+  }
+
+  100%{
+    oapcity: 1px;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-down{
+  animation: fade-down 200ms ease-in-out;
 }
 
 @keyframes fade-down{
   0%{
     opacity: 0;
-    transform: translateY(-30px) scale(0.9);
+    transform: translateY(-20px) scale(0.9);
   }
 
   100%{
@@ -871,6 +871,10 @@ html {
   transition-duration: 150ms;
 }
 
+.duration-300{
+  transition-duration: 300ms;
+}
+
 .ease-in-out{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -891,20 +895,6 @@ html {
   --body: hsl(0, 0%, 98%);
   --border: hsl(236, 9%, 61%);
   --text: hsl(235, 19%, 35%);
-}
-
-@keyframes rotate-360{
-  0%{
-    transform: rotate(0deg);
-  }
-
-  100%{
-    transform: rotate(360deg);
-  }
-}
-
-.hover\:animate-rotate-360:hover{
-  animation: rotate-360 500ms ease-in-out;
 }
 
 .hover\:text-text-color:hover{

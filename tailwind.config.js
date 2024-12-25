@@ -21,7 +21,7 @@ module.exports = {
         "fade-down": {
           "0%": {
             opacity: 0,
-            transform: "translateY(-30px) scale(0.9)",
+            transform: "translateY(-20px) scale(0.9)",
           },
           "100%": {
             oapcity: 1,

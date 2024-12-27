@@ -1,0 +1,9 @@
+{
+  "currentTodo": [
+    {
+      "id": 0,
+      "todo": "Welcome to my todo",
+      "isDone": 0
+    }
+  ]
+}

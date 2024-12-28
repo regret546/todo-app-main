@@ -45,7 +45,7 @@ function newToDo(input) {
   if (!input.todo.trim()) {
     return;
   }
-  /*   console.log(input.todo); */
+
   const card = todoCard.content.cloneNode(true).children[0];
   const todoInfo = card.querySelector("[data-todo-info]");
   card.setAttribute("id", input.id);
@@ -55,6 +55,7 @@ function newToDo(input) {
 
 const todoInputForm = document.querySelector("#input-form");
 todoInputForm.addEventListener("submit", function (e) {
+  let idCounter = localStorage.getItem("idCounter") || 0;
   let saveToDoData = localStorage.getItem("todoData");
   e.preventDefault();
   const userInput = this.querySelector("#userInput").value;
@@ -63,23 +64,32 @@ todoInputForm.addEventListener("submit", function (e) {
     : {
         currentTodo: [],
       };
-  lastIndex = parseData.currentTodo.length - 1;
+  lastIndex = parseInt(idCounter) + 1;
   const newTodo = {
-    id: lastIndex + 1,
+    id: lastIndex - 1,
     todo: userInput,
     isDone: 0,
   };
   parseData.currentTodo.push(newTodo);
-  console.log(parseData.currentTodo);
   localStorage.setItem("todoData", JSON.stringify(parseData));
+  localStorage.setItem("idCounter", lastIndex);
   newToDo(newTodo);
   this.querySelector("#userInput").value = "";
   this.querySelector("#userInput").blur();
+  console.log(localStorage.getItem("idCounter"));
 });
 
 /* delete */
 function deleteToDo(currentToDo) {
+  let saveToDoData = localStorage.getItem("todoData");
+  let parseData = JSON.parse(saveToDoData);
   const currentToDoContainer = currentToDo.closest(".list-body");
+  const updatedTodos = parseData.currentTodo.filter(
+    (todo) => parseInt(todo.id) !== parseInt(currentToDoContainer.id)
+  );
+  parseData.currentTodo = updatedTodos;
+  console.log(parseData);
+  localStorage.setItem("todoData", JSON.stringify(parseData));
   currentToDoContainer.remove();
 }
 

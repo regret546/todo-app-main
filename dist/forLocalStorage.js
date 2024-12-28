@@ -1,10 +1,11 @@
 getLocalData = async function () {
   let saveToDoData = localStorage.getItem("todoData");
+  let idCounter = localStorage.getItem("idCounter") || 0;
   if (!saveToDoData) {
     const res = await axios.get("/data.json");
     data = res.data;
+    localStorage.setItem("idCounter", res.data.currentTodo.length);
     localStorage.setItem("todoData", JSON.stringify(data));
-    saveToDoData = localStorage.getItem("todoData");
     displayLocalData(data.currentTodo);
   } else {
     const parsedData = JSON.parse(saveToDoData);
@@ -14,7 +15,6 @@ getLocalData = async function () {
 
 displayLocalData = function (data) {
   data.forEach((element) => {
-    console.log(element);
     newToDo(element);
   });
 };

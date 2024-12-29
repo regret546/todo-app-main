@@ -78,7 +78,10 @@
         <article
           class="list relative grid gap-2 w-full pb-2 -top-[3rem] md:-top-[8rem] bg-body-color rounded-md"
         >
-          <div class="todo-container" id="todo-list">
+          <div
+            class="todo-container max-h-[400px] overflow-y-auto md:max-h-[550px]"
+            id="todo-list"
+          >
             <div class="list-body">
               <div
                 class="py-4 pl-[3rem] line-through relative text-left border-b-2 border-border-color text-border-color"
@@ -135,7 +138,9 @@
             </div>
           </div>
         </article>
-        <article class="bg-body-color rounded-md p-4 relative -top-4 md:hidden">
+        <article
+          class="bg-body-color rounded-md p-4 relative -top-[2rem] md:hidden"
+        >
           <div
             class="flex justify-center gap-2 text-sm font-fw-bold2 text-border-color"
           >

@@ -592,6 +592,14 @@ html {
   top: 1rem;
 }
 
+.-top-6{
+  top: -1.5rem;
+}
+
+.-top-\[2rem\]{
+  top: -2rem;
+}
+
 .my-2{
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -627,6 +635,10 @@ html {
 
 .h-\[24px\]{
   height: 24px;
+}
+
+.max-h-\[400px\]{
+  max-height: 400px;
 }
 
 .w-\[24px\]{
@@ -705,6 +717,10 @@ html {
 
 .gap-2{
   gap: 0.5rem;
+}
+
+.overflow-y-auto{
+  overflow-y: auto;
 }
 
 .rounded-full{
@@ -932,6 +948,14 @@ html {
 
   .md\:h-\[35vh\]{
     height: 35vh;
+  }
+
+  .md\:max-h-\[700px\]{
+    max-height: 700px;
+  }
+
+  .md\:max-h-\[550px\]{
+    max-height: 550px;
   }
 
   .md\:w-full{

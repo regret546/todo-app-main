@@ -1,6 +1,6 @@
 getLocalData = async function () {
-  let saveToDoData = localStorage.getItem("todoData");
-  let idCounter = localStorage.getItem("idCounter") || 0;
+  const saveToDoData = localStorage.getItem("todoData");
+  const idCounter = localStorage.getItem("idCounter") || 0;
   if (!saveToDoData) {
     const res = await axios.get("/data.json");
     data = res.data;

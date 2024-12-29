@@ -50,13 +50,15 @@ function newToDo(input) {
   const todoInfo = card.querySelector("[data-todo-info]");
   card.setAttribute("id", input.id);
   todoInfo.textContent = input.todo;
+  if (input.isDone === 1) {
+    finishToDo(card);
+  }
   todoCardContainer.append(card);
 }
-
 const todoInputForm = document.querySelector("#input-form");
 todoInputForm.addEventListener("submit", function (e) {
-  let idCounter = localStorage.getItem("idCounter") || 0;
-  let saveToDoData = localStorage.getItem("todoData");
+  const idCounter = localStorage.getItem("idCounter") || 0;
+  const saveToDoData = localStorage.getItem("todoData");
   e.preventDefault();
   const userInput = this.querySelector("#userInput").value;
   const parseData = saveToDoData
@@ -76,19 +78,17 @@ todoInputForm.addEventListener("submit", function (e) {
   newToDo(newTodo);
   this.querySelector("#userInput").value = "";
   this.querySelector("#userInput").blur();
-  console.log(localStorage.getItem("idCounter"));
 });
 
 /* delete */
 function deleteToDo(currentToDo) {
-  let saveToDoData = localStorage.getItem("todoData");
-  let parseData = JSON.parse(saveToDoData);
+  const saveToDoData = localStorage.getItem("todoData");
+  const parseData = JSON.parse(saveToDoData);
   const currentToDoContainer = currentToDo.closest(".list-body");
   const updatedTodos = parseData.currentTodo.filter(
     (todo) => parseInt(todo.id) !== parseInt(currentToDoContainer.id)
   );
   parseData.currentTodo = updatedTodos;
-  console.log(parseData);
   localStorage.setItem("todoData", JSON.stringify(parseData));
   currentToDoContainer.remove();
 }
@@ -97,6 +97,16 @@ function deleteToDo(currentToDo) {
 function finishToDo(currentToDo) {
   const currentToDoContainer = currentToDo.closest(".list-body");
   const imageContainer = currentToDoContainer.querySelector(".checkbox");
+  const currentToDoID = parseInt(currentToDoContainer.id);
+  let saveToDoData = localStorage.getItem("todoData");
+  let parseData = JSON.parse(saveToDoData);
+  const todos = parseData.currentTodo;
+  todos.forEach((todo) => {
+    if (todo.id === currentToDoID) {
+      todo.isDone = 1;
+    }
+  });
+  localStorage.setItem("todoData", JSON.stringify(parseData));
   if (!imageContainer.classList.contains("bg-gradient-to-br")) {
     const checkImage = document.createElement("img");
     checkImage.src = "/images/icon-check.svg";

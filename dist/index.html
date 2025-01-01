@@ -79,7 +79,7 @@
           class="list relative grid gap-2 w-full pb-2 -top-[3rem] md:-top-[8rem] bg-body-color rounded-md"
         >
           <div
-            class="todo-container max-h-[400px] overflow-y-auto md:max-h-[550px]"
+            class="todo-container group drag max-h-[400px] overflow-y-auto md:max-h-[550px]"
             id="todo-list"
           >
             <div class="list-body">
@@ -87,11 +87,14 @@
                 class="py-4 pl-[3rem] line-through relative text-left border-b-2 border-border-color text-border-color"
               >
                 <div
-                  class="absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color grid place-items-center cursor-pointer bg-gradient-to-br from-linear-gradient-from to-linear-gradient-to"
+                  class="cursor-pointer inline-block"
+                  onclick="finishToDo(this)"
                 >
-                  <img src="/images/icon-check.svg" alt="" />
+                  <div
+                    class="checkbox absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color grid place-items-center"
+                  ></div>
+                  <p data-todo-info>10 mins meditation</p>
                 </div>
-                Jog around the part 3x
                 <svg
                   class="absolute grid place-items-center text-[1rem] right-[1rem] top-[1rem] fill-border-color mt-[2px]"
                   xmlns="http://www.w3.org/2000/svg"
@@ -169,18 +172,12 @@
       </section>
     </main>
 
-    <footer>
-      <!--     <div class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
-      </div> -->
-    </footer>
-
     <!-- Template -->
     <template data-user-todo>
-      <div class="list-body relative animate-fade-up">
+      <div
+        draggable="true"
+        class="list-body bg-body-color relative animate-fade-up transition-colors cursor-move"
+      >
         <div
           class="list-body-info py-4 pl-[3rem] relative text-left transition-colors duration-300 ease-in-out border-b-2 border-border-color"
         >
@@ -198,6 +195,7 @@
           height="24"
           viewBox="0 0 24 24"
           onclick="deleteToDo(this)"
+          drag
         >
           <path
             fill-rule="evenodd"

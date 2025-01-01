@@ -568,8 +568,8 @@ html {
   position: relative;
 }
 
-.-top-4{
-  top: -1rem;
+.-top-\[2rem\]{
+  top: -2rem;
 }
 
 .-top-\[3rem\]{
@@ -590,14 +590,6 @@ html {
 
 .top-\[1rem\]{
   top: 1rem;
-}
-
-.-top-6{
-  top: -1.5rem;
-}
-
-.-top-\[2rem\]{
-  top: -2rem;
 }
 
 .my-2{
@@ -687,6 +679,10 @@ html {
 
 .animate-fade-up{
   animation: fade-down 200ms ease-in-out;
+}
+
+.cursor-move{
+  cursor: move;
 }
 
 .cursor-pointer{
@@ -921,6 +917,11 @@ html {
   color: var(--text);
 }
 
+.group.drag .group-drag\:bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 @media (min-width: 768px){
   .md\:-top-\[10rem\]{
     top: -10rem;
@@ -948,10 +949,6 @@ html {
 
   .md\:h-\[35vh\]{
     height: 35vh;
-  }
-
-  .md\:max-h-\[700px\]{
-    max-height: 700px;
   }
 
   .md\:max-h-\[550px\]{

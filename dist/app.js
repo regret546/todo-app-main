@@ -37,7 +37,6 @@ toggleTheme.addEventListener("click", function () {
 });
 
 /* todo form */
-
 /* new */
 const todoCard = document.querySelector("[data-user-todo]");
 const todoCardContainer = document.querySelector("#todo-list");
@@ -73,8 +72,7 @@ todoInputForm.addEventListener("submit", function (e) {
     isDone: 0,
   };
   parseData.currentTodo.push(newTodo);
-  localStorage.setItem("todoData", JSON.stringify(parseData));
-  localStorage.setItem("idCounter", lastIndex);
+  saveData(parseData, lastIndex);
   newToDo(newTodo);
   this.querySelector("#userInput").value = "";
   this.querySelector("#userInput").blur();
@@ -89,7 +87,7 @@ function deleteToDo(currentToDo) {
     (todo) => parseInt(todo.id) !== parseInt(currentToDoContainer.id)
   );
   parseData.currentTodo = updatedTodos;
-  localStorage.setItem("todoData", JSON.stringify(parseData));
+  saveData(parseData);
   currentToDoContainer.remove();
 }
 
@@ -106,7 +104,7 @@ function finishToDo(currentToDo) {
       todo.isDone = 1;
     }
   });
-  localStorage.setItem("todoData", JSON.stringify(parseData));
+  saveData(parseData);
   if (!imageContainer.classList.contains("bg-gradient-to-br")) {
     const checkImage = document.createElement("img");
     checkImage.src = "/images/icon-check.svg";
@@ -122,5 +120,20 @@ function finishToDo(currentToDo) {
       .classList.add("line-through", "text-border-color");
   }
 }
+
+/* drag and drop */
+document.addEventListener("DOMContentLoaded", function () {
+  const draggablesTodo = document.querySelectorAll(".list-body");
+  draggablesTodo.forEach((draggable) => {
+    draggable.addEventListener("dragstart", function (event) {
+      draggable.style.opacity = "1";
+    });
+
+    draggable.addEventListener("dragend", function (event) {
+      event.stopPropagation();
+      draggable.classList.remove("group-drag:bg-white");
+    });
+  });
+});
 
 getLocalData();

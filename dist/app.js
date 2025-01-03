@@ -122,18 +122,25 @@ function finishToDo(currentToDo) {
 }
 
 /* drag and drop */
+
+function getDragAfterElement(container, y) {}
 document.addEventListener("DOMContentLoaded", function () {
   const draggablesTodo = document.querySelectorAll(".list-body");
   draggablesTodo.forEach((draggable) => {
     draggable.addEventListener("dragstart", function (event) {
-      draggable.style.opacity = "1";
+      draggable.classList.add("dragging");
     });
 
     draggable.addEventListener("dragend", function (event) {
-      event.stopPropagation();
-      draggable.classList.remove("group-drag:bg-white");
+      draggable.classList.remove("dragging");
     });
   });
+});
+
+todoCardContainer.addEventListener("dragover", function (e) {
+  e.preventDefault();
+  const currentDragging = document.querySelector(".dragging");
+  todoCardContainer.appendChild(currentDragging);
 });
 
 getLocalData();

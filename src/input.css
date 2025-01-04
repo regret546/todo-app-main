@@ -24,3 +24,12 @@
     font-family: "Josefin Sans", sans-serif;
   }
 }
+@layer utilities {
+  .draggable {
+    @apply cursor-grab;
+  }
+
+  .dragging {
+    @apply opacity-0;
+  }
+}

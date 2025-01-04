@@ -929,6 +929,14 @@ html {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.draggable{
+  cursor: grab;
+}
+
+.dragging{
+  opacity: 0;
+}
+
 /*   ### Dark Theme */
 
 .dark {
@@ -949,11 +957,6 @@ html {
 
 .hover\:text-text-color:hover{
   color: var(--text);
-}
-
-.group.drag .group-drag\:bg-white{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 @media (min-width: 768px){

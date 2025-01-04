@@ -122,13 +122,11 @@ function finishToDo(currentToDo) {
 }
 
 /* drag and drop */
-
-function getDragAfterElement(container, y) {}
 document.addEventListener("DOMContentLoaded", function () {
   const draggablesTodo = document.querySelectorAll(".list-body");
   draggablesTodo.forEach((draggable) => {
     draggable.addEventListener("dragstart", function (event) {
-      draggable.classList.add("dragging");
+      setTimeout(() => draggable.classList.add("dragging"), 0);
     });
 
     draggable.addEventListener("dragend", function (event) {
@@ -136,11 +134,36 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
-todoCardContainer.addEventListener("dragover", function (e) {
+todoCardContainer.addEventListener("dragover", (e) => {
   e.preventDefault();
-  const currentDragging = document.querySelector(".dragging");
-  todoCardContainer.appendChild(currentDragging);
+  const draggable = document.querySelector(".dragging");
+  const afterElement = getDragAfterElement(todoCardContainer, e.clientY);
+
+  console.log(afterElement);
+  if (afterElement == null) {
+    todoCardContainer.appendChild(draggable);
+  } else {
+    todoCardContainer.insertBefore(draggable, afterElement);
+  }
 });
+
+function getDragAfterElement(container, y) {
+  const draggableElements = [
+    ...container.querySelectorAll(".draggable:not(.dragging)"),
+  ];
+
+  return draggableElements.reduce(
+    (closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offset = y - box.top - box.height / 2;
+      if (offset < 0 && offset > closest.offset) {
+        return { offset, element: child };
+      } else {
+        return closest;
+      }
+    },
+    { offset: Number.NEGATIVE_INFINITY }
+  ).element;
+}
 
 getLocalData();

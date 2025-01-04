@@ -81,35 +81,7 @@
           <div
             class="todo-container group drag max-h-[400px] overflow-y-auto md:max-h-[550px]"
             id="todo-list"
-          >
-            <div class="list-body">
-              <div
-                class="py-4 pl-[3rem] line-through relative text-left border-b-2 border-border-color text-border-color"
-              >
-                <div
-                  class="cursor-pointer inline-block"
-                  onclick="finishToDo(this)"
-                >
-                  <div
-                    class="checkbox absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color grid place-items-center"
-                  ></div>
-                  <p data-todo-info>10 mins meditation</p>
-                </div>
-                <svg
-                  class="absolute grid place-items-center text-[1rem] right-[1rem] top-[1rem] fill-border-color mt-[2px]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
+          ></div>
 
           <div
             class="list-footer flex justify-between text-sm px-4 my-2 text-border-color"
@@ -176,7 +148,7 @@
     <template data-user-todo>
       <div
         draggable="true"
-        class="list-body bg-body-color relative animate-fade-up transition-colors cursor-move"
+        class="draggable list-body bg-body-color relative animate-fade-up transition-colors cursor-move"
       >
         <div
           class="list-body-info py-4 pl-[3rem] relative text-left transition-colors duration-300 ease-in-out border-b-2 border-border-color"
@@ -185,7 +157,7 @@
             <div
               class="checkbox absolute top-[1rem] left-[1rem] border-2 rounded-full h-[24px] w-[24px] border-border-color grid place-items-center"
             ></div>
-            <p data-todo-info>10 mins meditation</p>
+            <p data-todo-info></p>
           </div>
         </div>
         <svg

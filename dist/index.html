@@ -91,16 +91,19 @@
               class="hidden md:flex justify-center gap-2 text-sm font-fw-bold2 text-border-color"
             >
               <div
+                onclick="getLocalData()"
                 class="cursor-pointer hover:text-text-color transition-colors ease-in-out"
               >
                 All
               </div>
               <div
+                onclick="sortActiveToDo()"
                 class="cursor-pointer hover:text-text-color transition-colors ease-in-out"
               >
                 Active
               </div>
               <div
+                onclick="sortCompletedToDo()"
                 class="cursor-pointer hover:text-text-color transition-colors ease-in-out"
               >
                 Completed

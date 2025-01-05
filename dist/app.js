@@ -138,6 +138,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 todoCardContainer.addEventListener("dragover", (e) => {
   e.preventDefault();
+  if (sortActive) {
+    return;
+  }
   const draggable = document.querySelector(".dragging");
   const afterElement = getDragAfterElement(todoCardContainer, e.clientY);
   if (afterElement == null) {
@@ -164,6 +167,37 @@ function getDragAfterElement(container, y) {
     },
     { offset: Number.NEGATIVE_INFINITY }
   ).element;
+}
+
+/* for sorting */
+
+/* to identify if sorting is active */
+let sorting;
+
+/* active todo's */
+function sortActiveToDo() {
+  sorting = true;
+  let saveToDoData = JSON.parse(localStorage.getItem("todoData"));
+  todoCardContainer.innerHTML = "";
+  const currentActive = saveToDoData.currentTodo.filter(
+    (todo) => todo.isDone !== 1
+  );
+  currentActive.forEach((todo) => {
+    newToDo(todo);
+  });
+}
+
+/* completed todo's */
+function sortCompletedToDo() {
+  sorting = true;
+  let saveToDoData = JSON.parse(localStorage.getItem("todoData"));
+  todoCardContainer.innerHTML = "";
+  const currentActive = saveToDoData.currentTodo.filter(
+    (todo) => todo.isDone !== 0
+  );
+  currentActive.forEach((todo) => {
+    newToDo(todo);
+  });
 }
 
 getLocalData();

@@ -24,3 +24,19 @@ saveData = function (parseData, lastIndex) {
     localStorage.setItem("idCounter", lastIndex);
   }
 };
+
+sortData = function () {
+  const allTodoList = document.querySelectorAll(".draggable");
+  const newSorteData = {
+    currentTodo: [],
+  };
+  allTodoList.forEach((todo) => {
+    let todoInfo = todo.querySelector("[data-todo-info]");
+    newSorteData.currentTodo.push({
+      id: parseInt(todo.getAttribute("id")),
+      todo: `${todoInfo.textContent}`,
+      isDone: parseInt(todo.getAttribute("done")),
+    });
+  });
+  saveData(newSorteData);
+};

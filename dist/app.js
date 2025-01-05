@@ -48,6 +48,7 @@ function newToDo(input) {
   const card = todoCard.content.cloneNode(true).children[0];
   const todoInfo = card.querySelector("[data-todo-info]");
   card.setAttribute("id", input.id);
+  card.setAttribute("done", input.isDone);
   todoInfo.textContent = input.todo;
   if (input.isDone === 1) {
     finishToDo(card);
@@ -131,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     draggable.addEventListener("dragend", function (event) {
       draggable.classList.remove("dragging");
+      sortData();
     });
   });
 });
@@ -138,8 +140,6 @@ todoCardContainer.addEventListener("dragover", (e) => {
   e.preventDefault();
   const draggable = document.querySelector(".dragging");
   const afterElement = getDragAfterElement(todoCardContainer, e.clientY);
-
-  console.log(afterElement);
   if (afterElement == null) {
     todoCardContainer.appendChild(draggable);
   } else {

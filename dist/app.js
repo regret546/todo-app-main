@@ -123,7 +123,7 @@ function finishToDo(currentToDo) {
 }
 
 /* drag and drop */
-document.addEventListener("DOMContentLoaded", function () {
+function initializeDraggables() {
   const draggablesTodo = document.querySelectorAll(".list-body");
   draggablesTodo.forEach((draggable) => {
     draggable.addEventListener("dragstart", function (event) {
@@ -135,14 +135,21 @@ document.addEventListener("DOMContentLoaded", function () {
       sortData();
     });
   });
+}
+
+/* Call it on DOMContentLoaded */
+document.addEventListener("DOMContentLoaded", function () {
+  initializeDraggables();
 });
+
 todoCardContainer.addEventListener("dragover", (e) => {
   e.preventDefault();
-  if (sortActive) {
+  if (sorting) {
     return;
   }
   const draggable = document.querySelector(".dragging");
   const afterElement = getDragAfterElement(todoCardContainer, e.clientY);
+  console.log(draggable);
   if (afterElement == null) {
     todoCardContainer.appendChild(draggable);
   } else {
@@ -172,7 +179,19 @@ function getDragAfterElement(container, y) {
 /* for sorting */
 
 /* to identify if sorting is active */
-let sorting;
+let sorting = false;
+
+/* all todo's */
+function allToDo() {
+  todoCardContainer.innerHTML = "";
+  sorting = false;
+  let saveToDoData = JSON.parse(localStorage.getItem("todoData"));
+  const currentActive = saveToDoData.currentTodo;
+  currentActive.forEach((allToDo) => {
+    newToDo(allToDo);
+  });
+  initializeDraggables();
+}
 
 /* active todo's */
 function sortActiveToDo() {
@@ -182,8 +201,8 @@ function sortActiveToDo() {
   const currentActive = saveToDoData.currentTodo.filter(
     (todo) => todo.isDone !== 1
   );
-  currentActive.forEach((todo) => {
-    newToDo(todo);
+  currentActive.forEach((activeToDo) => {
+    newToDo(activeToDo);
   });
 }
 
@@ -195,8 +214,8 @@ function sortCompletedToDo() {
   const currentActive = saveToDoData.currentTodo.filter(
     (todo) => todo.isDone !== 0
   );
-  currentActive.forEach((todo) => {
-    newToDo(todo);
+  currentActive.forEach((completedToDo) => {
+    newToDo(completedToDo);
   });
 }
 

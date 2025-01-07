@@ -132,7 +132,9 @@ function initializeDraggables() {
 
     draggable.addEventListener("dragend", function (event) {
       draggable.classList.remove("dragging");
-      sortData();
+      if (!sorting) {
+        sortData();
+      }
     });
   });
 }
@@ -144,12 +146,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 todoCardContainer.addEventListener("dragover", (e) => {
   e.preventDefault();
-  if (sorting) {
-    return;
-  }
+
   const draggable = document.querySelector(".dragging");
   const afterElement = getDragAfterElement(todoCardContainer, e.clientY);
-  console.log(draggable);
   if (afterElement == null) {
     todoCardContainer.appendChild(draggable);
   } else {
@@ -177,7 +176,6 @@ function getDragAfterElement(container, y) {
 }
 
 /* for sorting */
-
 /* to identify if sorting is active */
 let sorting = false;
 
@@ -196,6 +194,7 @@ function allToDo() {
 /* active todo's */
 function sortActiveToDo() {
   sorting = true;
+
   let saveToDoData = JSON.parse(localStorage.getItem("todoData"));
   todoCardContainer.innerHTML = "";
   const currentActive = saveToDoData.currentTodo.filter(
@@ -204,6 +203,7 @@ function sortActiveToDo() {
   currentActive.forEach((activeToDo) => {
     newToDo(activeToDo);
   });
+  initializeDraggables();
 }
 
 /* completed todo's */
@@ -217,6 +217,17 @@ function sortCompletedToDo() {
   currentActive.forEach((completedToDo) => {
     newToDo(completedToDo);
   });
+  initializeDraggables();
 }
 
+function clearCompleted() {
+  let saveToDoData = JSON.parse(localStorage.getItem("todoData"));
+  const currentActive = saveToDoData.currentTodo.filter(
+    (todo) => todo.isDone !== 1
+  );
+  saveToDoData.currentTodo = currentActive;
+  console.log(saveToDoData);
+  saveData(saveToDoData);
+  allToDo();
+}
 getLocalData();

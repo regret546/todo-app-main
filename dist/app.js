@@ -204,6 +204,7 @@ function sortActiveToDo() {
     newToDo(activeToDo);
   });
   initializeDraggables();
+  updateItems();
 }
 
 /* completed todo's */
@@ -218,6 +219,7 @@ function sortCompletedToDo() {
     newToDo(completedToDo);
   });
   initializeDraggables();
+  updateItems();
 }
 
 function clearCompleted() {
@@ -228,6 +230,13 @@ function clearCompleted() {
   saveToDoData.currentTodo = currentActive;
   console.log(saveToDoData);
   saveData(saveToDoData);
-  allToDo();
 }
+
+/* for updating items */
+function updateItems() {
+  const currentItems = document.querySelector("#current-items");
+  const allTodos = document.querySelectorAll(".list-body");
+  currentItems.innerText = allTodos.length;
+}
+
 getLocalData();

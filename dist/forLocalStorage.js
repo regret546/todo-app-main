@@ -16,6 +16,7 @@ displayLocalData = function (data) {
   data.forEach((element) => {
     newToDo(element);
   });
+  updateItems();
 };
 
 saveData = function (parseData, lastIndex) {

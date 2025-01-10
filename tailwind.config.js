@@ -46,11 +46,22 @@ module.exports = {
             transform: "rotate(360deg)",
           },
         },
+        slightRightFade: {
+          "0%": {
+            left: 0,
+            opacity: 1,
+          },
+          "100%": {
+            left: "100vh",
+            opacity: 0,
+          },
+        },
       },
       animation: {
         "fade-down": "fade-down 200ms ease-in-out",
         "fade-up": "fade-down 200ms ease-in-out",
         "rotate-360": "rotate-360 500ms ease-in-out",
+        "slide-right": "slightRightFade 200ms ease-in-out",
       },
     },
   },

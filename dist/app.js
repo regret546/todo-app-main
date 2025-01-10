@@ -119,6 +119,11 @@ function finishToDo(currentToDo) {
     currentToDoContainer
       .querySelector("[data-todo-info]")
       .classList.add("line-through", "text-border-color");
+    if (sortingActive) {
+      setTimeout(() => {
+        currentToDoContainer.classList.add("hidden");
+      }, 400);
+    }
   }
 }
 
@@ -178,6 +183,7 @@ function getDragAfterElement(container, y) {
 /* for sorting */
 /* to identify if sorting is active */
 let sorting = false;
+let sortingActive = false;
 
 /* all todo's */
 function allToDo() {
@@ -188,13 +194,15 @@ function allToDo() {
   currentActive.forEach((allToDo) => {
     newToDo(allToDo);
   });
+
   initializeDraggables();
+  removeHiddenCompleted();
 }
 
 /* active todo's */
 function sortActiveToDo() {
   sorting = true;
-
+  sortingActive = true;
   let saveToDoData = JSON.parse(localStorage.getItem("todoData"));
   todoCardContainer.innerHTML = "";
   const currentActive = saveToDoData.currentTodo.filter(
@@ -204,6 +212,7 @@ function sortActiveToDo() {
     newToDo(activeToDo);
   });
   initializeDraggables();
+  removeHiddenCompleted();
   updateItems();
 }
 
@@ -237,6 +246,16 @@ function updateItems() {
   const currentItems = document.querySelector("#current-items");
   const allTodos = document.querySelectorAll(".list-body");
   currentItems.innerText = allTodos.length;
+}
+
+function removeHiddenCompleted() {
+  sortingActive = false;
+  const draggablesTodo = document.querySelectorAll(".list-body");
+  draggablesTodo.forEach((draggable) => {
+    if (draggable.classList.contains("hidden")) {
+      draggable.classList.remove("hidden");
+    }
+  });
 }
 
 getLocalData();

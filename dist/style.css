@@ -715,6 +715,22 @@ html {
   animation: fade-down 200ms ease-in-out;
 }
 
+@keyframes slightRightFade{
+  0%{
+    left: 0;
+    opacity: 1;
+  }
+
+  100%{
+    left: 100vh;
+    opacity: 0;
+  }
+}
+
+.animate-slide-right{
+  animation: slightRightFade 200ms ease-in-out;
+}
+
 .cursor-move{
   cursor: move;
 }

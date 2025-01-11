@@ -194,7 +194,6 @@ function allToDo() {
   currentActive.forEach((allToDo) => {
     newToDo(allToDo);
   });
-
   initializeDraggables();
   removeHiddenCompleted();
 }
@@ -237,8 +236,9 @@ function clearCompleted() {
     (todo) => todo.isDone !== 1
   );
   saveToDoData.currentTodo = currentActive;
-  console.log(saveToDoData);
+  todoCardContainer.innerHTML = "";
   saveData(saveToDoData);
+  displayLocalData(saveToDoData.currentTodo);
 }
 
 /* for updating items */
@@ -257,5 +257,15 @@ function removeHiddenCompleted() {
     }
   });
 }
+
+/* for sortingButton style */
+const buttons = document.querySelectorAll(".color-toggle");
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    buttons.forEach((btn) => btn.classList.remove("text-bright-blue"));
+
+    button.classList.add("text-bright-blue");
+  });
+});
 
 getLocalData();

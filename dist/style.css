@@ -715,22 +715,6 @@ html {
   animation: fade-down 200ms ease-in-out;
 }
 
-@keyframes slightRightFade{
-  0%{
-    left: 0;
-    opacity: 1;
-  }
-
-  100%{
-    left: 100vh;
-    opacity: 0;
-  }
-}
-
-.animate-slide-right{
-  animation: slightRightFade 200ms ease-in-out;
-}
-
 .cursor-move{
   cursor: move;
 }
@@ -913,6 +897,11 @@ html {
   color: var(--text);
 }
 
+.text-bright-blue{
+  --tw-text-opacity: 1;
+  color: hsl(220 98% 61% / var(--tw-text-opacity));
+}
+
 .line-through{
   text-decoration-line: line-through;
 }
@@ -973,6 +962,16 @@ html {
 
 .hover\:text-text-color:hover{
   color: var(--text);
+}
+
+.hover\:text-bright-blue:hover{
+  --tw-text-opacity: 1;
+  color: hsl(220 98% 61% / var(--tw-text-opacity));
+}
+
+.active\:text-black:active{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 @media (min-width: 768px){

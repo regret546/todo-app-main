@@ -74,9 +74,12 @@ todoInputForm.addEventListener("submit", function (e) {
   };
   parseData.currentTodo.push(newTodo);
   saveData(parseData, lastIndex);
-  newToDo(newTodo);
   this.querySelector("#userInput").value = "";
   this.querySelector("#userInput").blur();
+  if (activeAndCompletedButton) {
+    return;
+  }
+  newToDo(newTodo);
 });
 
 /* delete */
@@ -189,6 +192,7 @@ let sortingActive = false;
 function allToDo() {
   todoCardContainer.innerHTML = "";
   sorting = false;
+  activeAndCompletedButton = false;
   let saveToDoData = JSON.parse(localStorage.getItem("todoData"));
   const currentActive = saveToDoData.currentTodo;
   currentActive.forEach((allToDo) => {
@@ -259,11 +263,14 @@ function removeHiddenCompleted() {
 }
 
 /* for sortingButton style */
+let activeAndCompletedButton = false;
 const buttons = document.querySelectorAll(".color-toggle");
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
+    if (button.innerText === "Active" || button.innerText === "Completed") {
+      activeAndCompletedButton = true;
+    }
     buttons.forEach((btn) => btn.classList.remove("text-bright-blue"));
-
     button.classList.add("text-bright-blue");
   });
 });
